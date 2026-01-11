@@ -149,7 +149,8 @@
                     daily competitive scrims.
                 </p>
                 <div class="join-buttons">
-                    <a href="https://chat.whatsapp.com/Kuri3lRolRPB6vNvonI0JQ" class="btn primary">Join via WhatsApp</a>
+                    <a href="https://chat.whatsapp.com/Kuri3lRolRPB6vNvonI0JQ"
+                        class="btn primary">Join via WhatsApp</a>
                     <a href="#" class="btn secondary">Join via Discord</a>
                 </div>
             </div>
@@ -185,7 +186,7 @@
                 </p>
 
                 <ul class="rules-list">
-                    <li>Official WhatsApp: <strong>+91XXXXXXXXXX</strong></li>
+                    <li>Official WhatsApp: <strong>+91-9481148039</strong></li>
                     <li>Official Discord: <strong>AR Prime Scrims</strong></li>
                     <li>Admins will never ask for OTP, passwords, or personal
                         account access.</li>
@@ -194,6 +195,77 @@
                 </ul>
             </div>
         </section>
+        <!-- REGISTRATION FORM -->
+        <section id="register" class="section">
+            <div class="container">
+                <h2>Team Registration</h2>
+                <p>Fill in correct details. Wrong or fake information may lead
+                    to permanent ban.</p>
+
+                <form class="registration-form" id="regForm">
+
+                    <!-- Team Name -->
+                    <div class="form-group">
+                        <label>Team Name *</label>
+                        <input type="text"
+                            name="entry.1972333157"
+                            placeholder="Enter Team Name"
+                            required>
+                    </div>
+
+                    <!-- Player 1 -->
+                    <div class="form-group">
+                        <label>Player 1 (Name | BGMI ID) *</label>
+                        <input type="text"
+                            name="entry.350335857"
+                            placeholder="Example: ARxShadow | 5123456789"
+                            required>
+                    </div>
+
+                    <!-- Player 2 -->
+                    <div class="form-group">
+                        <label>Player 2 (Name | BGMI ID) *</label>
+                        <input type="text"
+                            name="entry.1289028860"
+                            placeholder="Example: ARxFrost | 5987342211"
+                            required>
+                    </div>
+
+                    <!-- Player 3 -->
+                    <div class="form-group">
+                        <label>Player 3 (Name | BGMI ID) *</label>
+                        <input type="text"
+                            name="entry.2080683257"
+                            placeholder="Example: ARxNova | 5234567890"
+                            required>
+                    </div>
+
+                    <!-- Player 4 -->
+                    <div class="form-group">
+                        <label>Player 4 (Name | BGMI ID) *</label>
+                        <input type="text"
+                            name="entry.658985675"
+                            placeholder="Example: ARxViper | 5345678901"
+                            required>
+                    </div>
+
+                    <button type="submit" class="btn primary submit-btn">
+                        Submit Registration
+                    </button>
+                </form>
+                <p id="thankYouMsg" style="
+                    display:none;
+                    color:#d4af37;
+                    margin-top:20px;
+                    font-weight:600;
+                    ">
+                    ✅ Thank you for submission!
+                    Your team has been registered successfully.
+                </p>
+
+            </div>
+        </section>
+
         <!-- FOOTER -->
         <footer class="footer">
             <div class="container">
@@ -214,6 +286,27 @@
                 </p>
             </div>
         </footer>
+        <script>
+  const form = document.getElementById("regForm");
+  const thankYouMsg = document.getElementById("thankYouMsg");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    fetch(
+      "https://docs.google.com/forms/d/e/1FAIpQLSeRNg1PNDmr2Ws7F2yQFVHdVH__nnolz0y94uit-1euJHlOYQ/formResponse",
+      {
+        method: "POST",
+        body: new FormData(form),
+        mode: "no-cors"
+      }
+    );
+
+    thankYouMsg.style.display = "block";
+    form.reset();
+  });
+</script>
+
 
     </body>
 </html>
