@@ -1,3 +1,6 @@
+/* =====================
+   GLOBAL RESET
+===================== */
 * {
     margin: 0;
     padding: 0;
@@ -8,26 +11,34 @@ html {
     scroll-behavior: smooth;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Inter:wght@400;500;600&display=swap');
+
 body {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Inter', Arial, sans-serif;
     background-color: #0b0b0b;
     color: #ffffff;
     line-height: 1.6;
 }
 
+/* =====================
+   LAYOUT
+===================== */
 .container {
     width: 90%;
     max-width: 1100px;
     margin: auto;
 }
 
-/* HEADER */
+/* =====================
+   HEADER
+===================== */
 .header {
-    background: #000000;
+    background: #000;
     border-bottom: 1px solid #222;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.7);
 }
 
 .header-flex {
@@ -37,39 +48,46 @@ body {
     padding: 16px 0;
 }
 
-.logo {
-    font-weight: 800;
-    letter-spacing: 1px;
-    color: #d4af37;
-}
-
 .logo img {
     height: 45px;
 }
 
-
+/* NAV */
 .nav a {
-    color: #ffffff;
-    margin-left: 20px;
+    color: #fff;
+    margin-left: 18px;
     text-decoration: none;
     font-size: 14px;
+    padding: 6px 8px;
+    transition: color 0.25s ease;
 }
 
-.nav a:hover {
+.nav a:hover,
+.nav a:active {
     color: #d4af37;
 }
 
-/* HERO */
+/* =====================
+   HERO
+===================== */
 .hero {
     text-align: center;
     padding: 100px 0;
     background: radial-gradient(circle at top, #111 0%, #000 70%);
 }
 
+.hero-logo {
+    height: 90px;
+    margin-bottom: 20px;
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.4));
+}
+
 .hero h1 {
+    font-family: 'Orbitron', sans-serif;
     font-size: 48px;
     color: #d4af37;
     letter-spacing: 2px;
+    text-shadow: 0 0 25px rgba(212, 175, 55, 0.35);
 }
 
 .subtitle {
@@ -80,21 +98,28 @@ body {
 .tagline {
     margin-top: 8px;
     font-size: 14px;
-    color: #aaaaaa;
+    color: #aaa;
 }
 
 .hero-buttons {
     margin-top: 30px;
 }
 
-/* BUTTONS */
+/* =====================
+   BUTTONS
+===================== */
 .btn {
-    padding: 12px 24px;
+    padding: 12px 26px;
     text-decoration: none;
     margin: 8px;
     display: inline-block;
     font-weight: 600;
     border-radius: 4px;
+    transition: all 0.25s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
 }
 
 .primary {
@@ -102,17 +127,30 @@ body {
     color: #000;
 }
 
+.primary:hover {
+    background: #e5c356;
+}
+
 .secondary {
     border: 1px solid #d4af37;
     color: #d4af37;
 }
 
-/* SECTIONS */
+.secondary:hover {
+    background: #d4af37;
+    color: #000;
+}
+
+/* =====================
+   SECTIONS
+===================== */
 .section {
     padding: 80px 0;
+    border-bottom: 1px solid #111;
 }
 
 .section h2 {
+    font-family: 'Orbitron', sans-serif;
     color: #d4af37;
     margin-bottom: 20px;
     font-size: 28px;
@@ -126,7 +164,9 @@ body {
     background: #050505;
 }
 
-/* LISTS */
+/* =====================
+   LISTS
+===================== */
 .info-list,
 .rules-list {
     list-style: none;
@@ -137,37 +177,20 @@ body {
 .rules-list li {
     margin-bottom: 12px;
     border-left: 3px solid #d4af37;
-    padding-left: 12px;
+    padding: 10px 12px;
 }
 
-/* JOIN */
-.join-buttons {
-    margin-top: 30px;
+.rules-list li {
+    background: rgba(212, 175, 55, 0.03);
+    border-radius: 4px;
 }
 
-/* FOOTER */
-.footer {
-    background: #000;
-    padding: 30px 0;
-    text-align: center;
-    font-size: 13px;
-    color: #888;
-}
-
-.disclaimer {
-    margin-top: 6px;
-    font-size: 11px;
-}
-
-.hero-logo {
-    height: 90px;
-    margin-bottom: 20px;
-}
-
+/* =====================
+   QR
+===================== */
 .qr-container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
     text-align: center;
 }
@@ -184,27 +207,18 @@ body {
 .qr-note {
     font-size: 13px;
     color: #aaa;
-    margin-top: 10px;
 }
 
-.footer-logo {
-    max-width: 140px;
-    width: 100%;
-    height: auto;
-    margin: 0 auto;
-    display: block;
-}
-
-@media (max-width: 480px) {
-    .footer-logo {
-        max-width: 110px;
-    }
-}
-
-/* REGISTRATION FORM */
+/* =====================
+   FORM
+===================== */
 .registration-form {
     max-width: 700px;
     margin-top: 30px;
+    background: #050505;
+    padding: 30px;
+    border-radius: 6px;
+    border: 1px solid #111;
 }
 
 .form-group {
@@ -226,23 +240,15 @@ body {
     color: #fff;
     border-radius: 4px;
     outline: none;
+    transition: border-color 0.25s ease;
+}
+
+.registration-form input:hover {
+    border-color: #555;
 }
 
 .registration-form input:focus {
     border-color: #d4af37;
-}
-
-.registration-form h3 {
-    margin-top: 25px;
-    margin-bottom: 10px;
-    font-size: 16px;
-    color: #d4af37;
-}
-
-.form-row {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
 }
 
 .submit-btn {
@@ -251,9 +257,93 @@ body {
     border: none;
 }
 
-/* MOBILE */
+/* =====================
+   FOOTER
+===================== */
+.footer {
+    background: #000;
+    padding: 30px 0;
+    text-align: center;
+    font-size: 13px;
+    color: #888;
+}
+
+.footer-logo {
+    max-width: 140px;
+    margin: 0 auto 10px;
+}
+
+.disclaimer {
+    font-size: 11px;
+    margin-top: 6px;
+}
+
+/* =====================
+   ACCESSIBILITY
+===================== */
+a:focus,
+input:focus {
+    outline: 2px solid rgba(212, 175, 55, 0.4);
+    outline-offset: 2px;
+}
+
+/* =====================
+   MOBILE
+===================== */
 @media (max-width: 600px) {
-    .form-row {
-        grid-template-columns: 1fr;
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .nav a {
+        margin-left: 10px;
     }
 }
+
+.admin-banner {
+    background: linear-gradient(90deg, #d4af37, #b8962e);
+    color: #000;
+    text-align: center;
+    padding: 10px 14px;
+    font-size: 14px;
+    font-weight: 600;
+    position: sticky;
+    top: 72px;
+    /* below header */
+    z-index: 99;
+}
+
+.admin-banner p {
+    margin: 0;
+}
+
+.fee-box {
+    margin-top: 30px;
+    padding: 20px;
+    background: rgba(212, 175, 55, 0.06);
+    border: 1px solid #d4af37;
+    border-radius: 6px;
+}
+
+.fee-box h3 {
+    font-family: 'Orbitron', sans-serif;
+    color: #d4af37;
+    margin-bottom: 14px;
+    font-size: 18px;
+}
+
+.fee-box ul {
+    list-style: none;
+}
+
+.fee-box li {
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.fee-warning {
+    margin-top: 12px;
+    font-size: 13px;
+    color: #ffcc66;
+}
+
