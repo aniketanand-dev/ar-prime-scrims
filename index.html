@@ -370,6 +370,23 @@
                 thankYouMsg.style.display = "block";
                 form.reset();
             });
+
+            let lastScrollTop = 0;
+                const banner = document.querySelector('.admin-banner');
+
+                window.addEventListener('scroll', () => {
+                    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+
+                    if (currentScroll > lastScrollTop && currentScroll > 100) {
+                        // scrolling down
+                        banner.classList.add('hide');
+                    } else {
+                        // scrolling up
+                        banner.classList.remove('hide');
+                    }
+
+                    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+                });
         </script>
 
     </body>

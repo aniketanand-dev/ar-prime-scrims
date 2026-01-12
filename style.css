@@ -311,11 +311,13 @@ input:focus {
     top: 72px;
     /* below header */
     z-index: 99;
+    transition: transform 0.3s ease;
 }
 
-.admin-banner p {
-    margin: 0;
+.admin-banner.hide {
+    transform: translateY(-100%);
 }
+
 
 .fee-box {
     margin-top: 30px;
@@ -346,4 +348,3 @@ input:focus {
     font-size: 13px;
     color: #ffcc66;
 }
-
